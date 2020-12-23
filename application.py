@@ -363,6 +363,8 @@ def read_signal(readit_n_clicks, user_id, signal_id):
         res_json = res.json()
         read = res_json["message"]
         csv_string = res_json["csv_string"]
+        if csv_string is None:
+            return read, None
         s3_df = pd.read_csv(StringIO(csv_string))
         cols = list(s3_df.columns)
     else:
@@ -429,4 +431,4 @@ def delete_signal(delete_n_clicks, user_id, signal_id, signal_description):
 if __name__ == '__main__':
     # todo: EB only takes 8080, but we can't use 8080 for both frontend and backend
     # todo: workaround: manually modify it before you upload
-    application.run(debug=True, port=8080)
+    application.run(debug=True, port=8000)
