@@ -439,4 +439,4 @@ def delete_signal(delete_n_clicks, user_id, signal_id, signal_description):
 if __name__ == '__main__':
     # todo: EB only takes 8080, but we can't use 8080 for both frontend and backend
     # todo: workaround: manually modify it before you upload
-    application.run(debug=True, port=8000)
+    application.run(debug=True, port=8080)
