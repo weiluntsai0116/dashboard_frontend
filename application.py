@@ -1,15 +1,5 @@
 # -*- coding: utf-8 -*-
-import os
-import pymysql
 import pandas as pd
-import mysql.connector
-from sqlalchemy import create_engine
-from pandas import DataFrame
-from datetime import datetime
-import flask
-import re
-import csv
-import boto3
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
