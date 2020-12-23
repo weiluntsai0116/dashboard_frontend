@@ -311,7 +311,7 @@ def create_signal(create_n_clicks, user_id, signal_id, signal_description, s3):
     }
     print(payload)
     if create_n_clicks != 0:
-        res = requests.post(security.dashboard_backend_url+"/api/signal/create", headers=header, data=json.dumps(payload))
+        res = requests.post(security.dashboard_backend_url+"/api/signal", headers=header, data=json.dumps(payload))
         res_json = res.json()
         create = res_json["message"]
     else:
@@ -336,7 +336,7 @@ def modify_signal(modify_n_clicks, user_id, signal_id, signal_description, s3):
     }
     print(payload)
     if modify_n_clicks != 0:
-        res = requests.put(security.dashboard_backend_url+"/api/signal/modify", headers=header, data=json.dumps(payload))
+        res = requests.put(security.dashboard_backend_url+"/api/signal", headers=header, data=json.dumps(payload))
         res_json = res.json()
         modify = res_json["message"]
     else:
@@ -359,7 +359,7 @@ def read_signal(readit_n_clicks, user_id, signal_id):
     print(payload)
 
     if readit_n_clicks != 0:
-        res = requests.get(security.dashboard_backend_url+"/api/signal/read", headers=header, data=json.dumps(payload))
+        res = requests.get(security.dashboard_backend_url+"/api/signal", headers=header, data=json.dumps(payload))
         res_json = res.json()
         read = res_json["message"]
         csv_string = res_json["csv_string"]
@@ -407,7 +407,7 @@ def delete_signal(delete_n_clicks, user_id, signal_id, signal_description):
     }
     print(payload)
     if delete_n_clicks is not None:
-        res = requests.delete(security.dashboard_backend_url+"/api/signal/modify", headers=header, data=json.dumps(payload))
+        res = requests.delete(security.dashboard_backend_url+"/api/signal", headers=header, data=json.dumps(payload))
         res_json = res.json()
         delete = res_json["message"]
     else:
